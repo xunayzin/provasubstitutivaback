@@ -56,6 +56,7 @@ export class UserService {
     const data: User = {
       ...dto,
       password: await bcrypt.hash(dto.password, 10),
+      email: ''
     };
 
     return this.prisma.users.create({
